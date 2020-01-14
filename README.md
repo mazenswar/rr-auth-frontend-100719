@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Format
 
-## Available Scripts
+- 55 mins
+- 10 min break
+- 55 mins
 
-In the project directory, you can run:
+## Key Questions
 
-### `yarn start`
+- What are hooks? how are they different from Class Components?
+- how do I use the useState & useEffect hooks (react)
+- how do I use useSelector & useDispatch (react-redux)
+- What is an dependency array and how should I use it
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# SWBATs
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Set up a Rails API auth with JWT tokens
 
-### `yarn test`
+  - Auth controller --> Do we need one? What will it do?
+  - custom routes --> can/should we do auth with just RESTful routes?
+  - JWT encode/decode --> https://github.com/jwt/ruby-jwt
+  - helper methods --> what can we make DRY?
+  - CORS & requests --> Why is this important? - remember authenticity token in mod 2?
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React frontend with Hooks & Redux
+  - Set up a login/sign up form using functional components with react hooks(useState) & react-redux hooks(useDispatch)
+  - Set up a redux store to handle multiple reducers.
+  - Define resource specific action creators and fetch functions.
+  - Understand what is an dependency array and what uses it has.
+  - bye bye `this`!
 
-### `yarn build`
+# Helpful Bookmarks
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Cookies instead of localStorage - https://www.thegreatcodeadventure.com/jwt-storage-in-rails-the-right-way/
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Learn React Hooks - https://github.com/kentcdodds/learn-react-hooks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## fullstack Rails vs Rails API
 
-### `yarn eject`
+1. The api app is configured to start with a more limited set of middlewares than normal. Specifically, it will not include any middleware primarily useful for browser applications (like cookies support) by default
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. In the api app, ApplicationController inherits from ActionController::API instead of ActionController::Base. As with middlewares, this will leave out any Action Controller modules that provide functionalities primarily used by browser applications.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. The api app is configures the generators to skip generating views, helpers and assets when you generate a new resource.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Source: https://edgeguides.rubyonrails.org/api_app.html
